@@ -1,0 +1,4 @@
+To run the backend webservice run the command 'npm run dev' from within the webservice folder
+To run the frontend webapp run the command 'npm run dev' from within the webapp/movie-app folder
+
+I didn't get the layout of the results done in the UI because of the 4 hour time window but you can see the output in the console
