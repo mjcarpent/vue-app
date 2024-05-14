@@ -7,15 +7,25 @@
         </form>
         <h1 v-if="populated">Results for '{{ queryText }}'</h1>
         <ul v-if="populated">
-            <div v-for="movie in movies">
-                <div class="column1">
-                    <img src={{ movie.poster_image_url }}>
+            <div class="row" v-for="movie in movies">
+                <div class="column1" style="float: left;width: 30%;">
+                    <h4>{{ movie.title }}</h4><br/><h6>{{ movie.popularity_summary }}</h6>
                 </div>
-                <div class="column2"></div>
-            </div> 
+                <div class="column2" style="float: left;width: 50%;">
+                    <img v-bind:src="movie.poster_image_url" width="86px" height="128px" alt="">
+                </div>
+            </div>
         </ul>
     </div>
 </template>
+
+<style scoped>
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+</style>
 
 <script setup>
 import { ref } from 'vue'
